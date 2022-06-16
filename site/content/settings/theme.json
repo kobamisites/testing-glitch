@@ -1,0 +1,18 @@
+{
+  "colors": {
+    "theme": {
+      "primary": "#DA4A91",
+      "secondary": "#DA4A9175",
+      "neutral": "#F0F4F8",
+      "accent": "#0673e8",
+      "complement": "#35469C",
+      "text": "#222222",
+      "light": "#FFFFFF",
+      "dark": "#000000"
+    }
+  },
+  "fontFamily": {
+    "primary": ["Helvetica", "sans-serif"],
+    "secondary": ["Georgia", "serif"]
+  }
+}

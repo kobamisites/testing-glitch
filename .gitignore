@@ -1,0 +1,13 @@
+.*
+!.gitignore
+node_modules/
+npm-debug.log
+yarn-error.log
+*-journal
+tmp
+db/test.db
+db/development.db
+dist/
+api/config/local*
+tests/playwright-artifacts/
+tests/playwright-report/

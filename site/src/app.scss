@@ -1,0 +1,185 @@
+/**
+ * This is for any styles needed for ksite to function properly and as expected
+ * a great example of this would be standard-block, ul.reset or image
+ * this can't be removed regardless of theme
+ * The whole progression is this:
+ * app.scss
+ * theme.scss (extending or replacing the default.scss)
+ * styles.scss (extending/overriding/replacing the theme.scss / default.scss)
+ */
+
+/**
+* Defaults
+*/
+:root {
+  --site-max-width: theme('screens.siteMaxWidth');
+  --site-main-width: calc(var(--site-max-width) - 80px);
+  --nav-image-height: 72px;
+  --input-bg-color: #fbfbfb;
+  --input-placeholder-color: #afafaf;
+  --star-background: orange;
+  --star-color: white;
+  --btn-color: theme('colors.theme.light');
+  --btn-bg-color: theme('colors.theme.primary');
+  --btn-border-color: var(--btn-bg-color);
+  --btn-border-radius: theme('borderRadius.DEFAULT');
+
+  --site-spacing-default: theme('spacing.default');
+  --site-padding-default: var(--site-spacing-default);
+  --site-margin-default: var(--site-spacing-default);
+
+  --site-padding-x: var(--site-padding-default); // 1rem px-4
+  --site-padding-y: calc(var(--site-padding-default) * 2); // py-8
+  --site-margin-x: var(--site-margin-default); // 1rem px-4
+  --site-margin-y: calc(var(--site-margin-default) * 2); // py-8
+  @screen md {
+  --site-padding-x: calc(var(--site-padding-default) * 2);  // px-8
+  --site-padding-y: calc(var(--site-padding-default) * 4); // py-16
+  --site-margin-x: calc(var(--site-margin-default) * 2);  // px-8
+  --site-margin-y: calc(var(--site-margin-default) * 8); // py-32
+  }
+}
+
+/**
+ * Headings
+ */
+
+/**
+ * Base Elements
+ */
+
+p {
+  @apply mb-4;
+}
+
+ul {
+  line-height: 1.8;
+  list-style: square outside;
+  @apply pl-8 pr-4 my-8;
+  @screen md {
+    @apply pl-16;
+  }
+}
+
+ul li:not(:last-child) {
+  @apply mb-4;
+}
+
+ul.reset {
+  @apply p-0 list-none max-w-full;
+  li {
+    @apply p-0 m-0;
+  }
+}
+
+summary {
+  @apply cursor-pointer;
+}
+
+details p {
+  @apply p-0;
+}
+details ul {
+  @apply p-4;
+}
+
+/**
+ * Links and Buttons
+ */
+
+a:hover {
+  @apply cursor-pointer;
+}
+
+.link {
+  @apply hover:opacity-80;
+}
+
+.btn {
+  @apply inline-block px-4 py-2 text-center hover:opacity-80 border-3;
+}
+
+/**
+ * Inputs
+ */
+
+.input,
+.textarea {
+  @apply max-w-full bg-color-$input-bg-color border-none shadow-lg rounded-lg text-base;
+  // box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  padding: 0.5rem 0.75rem;
+  &::placeholder {
+    @apply text-$input-placeholder-color;
+  }
+}
+
+/**
+ * Utils
+ */
+
+/**
+ * Special
+ */
+
+#app {
+  @apply relative m-auto max-w-$site-main-width;
+}
+
+.page-header {
+  @apply relative z-2;
+}
+
+.standard-block {
+  @apply px-$site-padding-x py-$site-padding-y;
+}
+
+.image {
+  @apply max-w-full;
+}
+
+.pages > {
+  p, details, ul, dl, h1, h2, h3, h4, h5, h6 {
+    @apply px-$site-padding-x;
+  }
+}
+
+.spacer {
+  @apply h-$site-padding-y;
+}
+
+// Undefined Custom Block sections
+
+.section-with-grid-1 {
+  @apply section-with-grid py-$site-padding-y;
+  h2 {
+    @apply mt-0 md:col-span-full;
+  }
+}
+
+.section-with-grid-2 {
+  @extend .section-with-grid-1;
+  h3, p {
+    @apply md:odd-of-type:col-start-1;
+  }
+}
+
+.section-with-grid-3 {
+  @extend .section-with-grid-1;
+  @apply md:grid-cols-3;
+  h3, p {
+    @apply md:with-cols-3;
+  }
+}
+
+
+.section-with-grid-4 {
+  @extend .section-with-grid-1;
+  @apply md:grid-cols-4;
+  h3, p {
+    @apply md:with-cols-4;
+  }
+}
+
+.section-with-text-centered {
+  @apply section-with-text-centered;
+}

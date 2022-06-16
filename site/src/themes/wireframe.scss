@@ -1,0 +1,83 @@
+/**
+ * This is a standard default styling that can be used
+ * either as a template for a fresh theme or extended
+ * it contains my of the classes that would be customized
+ * when creating theme
+ */
+
+/**
+* Imports
+*/
+
+@import './default.scss';
+
+:root {
+  // --site-max-width: theme('screens.siteMaxWidth');
+  // --site-main-width: calc(var(--site-max-width) - 80px);
+
+  --btn-color: theme('colors.theme.light');
+  --btn-bg-color: theme('colors.theme.dark');
+
+  // --site-spacing-default: theme('spacing.default');
+  // --site-padding-default: var(--site-spacing-default);
+  // --site-margin-default: var(--site-spacing-default);
+
+  // --site-padding-x: var(--site-padding-default); // 1rem px-4
+  // --site-padding-y: calc(var(--site-padding-default) * 2); // py-8
+  // --site-margin-x: var(--site-margin-default); // 1rem px-4
+  // --site-margin-y: calc(var(--site-margin-default) * 2); // py-8
+  // @screen md {
+  // --site-padding-x: calc(var(--site-padding-default) * 2);  // px-8
+  // --site-padding-y: calc(var(--site-padding-default) * 4); // py-32
+  // --site-margin-x: calc(var(--site-margin-default) * 2);  // px-8
+  // --site-margin-y: calc(var(--site-margin-default) * 8); // py-32
+  // }
+}
+
+/**
+* Defaults
+*/
+
+/**
+ * Headings
+ */
+
+/**
+ * Base Elements
+ */
+
+/**
+ * Links and Buttons
+ */
+
+ .btn.booking {
+   @apply lg:max-w-sm;
+ }
+
+/**
+ * Inputs
+ */
+
+/**
+ * Utils
+ */
+
+/**
+ * Special
+ */
+
+.pages .trust {
+  @apply bg-gray-50;
+}
+
+.process {
+  .arrow {
+    @apply text-theme-dark;
+  }
+  .content {
+    @apply font-semibold text-theme-dark;
+  }
+ .feature-image {
+    @apply bg-theme-light border-theme-dark rounded-full m-auto;
+  }
+}

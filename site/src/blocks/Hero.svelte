@@ -1,0 +1,36 @@
+<script>
+  import {metadata} from '@content/blocks/hero.md'
+
+  export let title = metadata.title || 'Hero Text Here'
+  export let backgroundImage = metadata.backgroundImage || 'https://via.placeholder.com/270/F0F0F0?Text=HEROIMAGE'
+  export let bgCss = `
+    background-image: linear-gradient(to left, rgba(360,360,360, 0) 70%, rgba(100, 100, 100, 0)),
+     linear-gradient(to right, rgba(360,360,360, 0) 30%, rgba(360, 360, 360, 0)),
+      url(${backgroundImage}), none;
+  `
+</script>
+
+<section class="hero standard-block" style={bgCss}>
+  <h1 class="m-0 p-0">{@html title}</h1>
+</section>
+
+
+<style lang="scss">
+  section {
+    @apply h-100 lg:h-150 flex flex-col justify-center;
+    background-color: white;
+    background-position-x: 0%, 0%, 0%, 0%;
+    background-position-y: 0%, 0%, 0%, 0%;
+    background-repeat: repeat, repeat, repeat, repeat;
+    background-attachment: scroll, scroll, scroll, scroll;
+    background-origin: padding-box, padding-box, padding-box, padding-box;
+    background-clip: border-box, border-box, border-box, border-box;
+    background-blend-mode: normal, normal, normal, normal;
+    background-size: cover;
+    background-position: 100% 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  h1 {
+      @apply -mt-32 mx-auto;
+  }
+</style>

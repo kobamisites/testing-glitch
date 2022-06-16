@@ -1,0 +1,44 @@
+// Here is where you can apply custom styles
+// or override default styles in the app
+
+/**
+* Imports
+*/
+// @import '@/themes/default.scss';
+@import '@/themes/wireframe.scss';
+// @import '@/themes/classy.scss';
+// @import '@/themes/loving-them-dots.scss';
+
+/**
+* Defaults & Variables
+*/
+:root {
+  --nav-image-height: 40px;
+  @screen 2xl {
+    --nav-image-height: 40px;
+  }
+}
+
+/**
+* Headings
+*/
+
+/**
+* Base Elements
+*/
+
+/**
+* Links & Buttons
+*/
+
+/**
+* Inputs
+*/
+
+/**
+* Utils
+*/
+
+/**
+* Special
+*/

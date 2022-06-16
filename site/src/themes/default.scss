@@ -1,0 +1,125 @@
+/**
+ * This is a standard default styling that can be used
+ * either as a template for a fresh theme or extended
+ * it contains my of the classes that would be customized
+ * when creating theme
+ */
+
+
+/**
+* Defaults
+*/
+
+body {
+  @apply font-primary text-theme-text;
+}
+
+/**
+ * Headings
+ */
+
+h1, h2, h3, h4, h5, h6 {
+}
+
+h1 {
+  @apply my-8 text-4xl text-center
+  sm:text-5xl
+  md:text-6xl md:leading-18;
+}
+
+h2 {
+  @apply mb-8 text-xl;
+  @screen md {
+    @apply text-center text-3xl mb-16;
+  }
+  @screen xl {
+    @apply text-4xl;
+  }
+}
+
+h3 {
+  @apply mb-4 font-bold text-4xl
+  md:text-3xl;
+}
+
+h4 {
+  @apply text-xl
+  md:text-2xl;
+}
+
+
+
+
+/**
+ * Base Elements
+ */
+
+summary {
+  @apply font-bold text-lg;
+}
+
+p {
+  @apply text-xl leading-8;
+}
+
+ul li:not(:last-child) {
+  @apply mb-4;
+}
+
+ul.reset {
+  @apply p-0 list-none max-w-full;
+  li {
+    @apply p-0 m-0;
+  }
+}
+
+/**
+ * Links and Buttons
+ */
+
+.btn {
+  @apply shadow-lg rounded-$btn-border-radius font-bold;
+  @apply bg-$btn-bg-color border-$btn-border-color text-$btn-color;
+  &.outlined {
+    @apply bg-white text-$btn-border-color;
+  }
+}
+
+/**
+ * Inputs
+ */
+
+/**
+ * Utils
+ */
+
+/**
+ * Special
+ */
+
+#app {
+  @apply bg-white;
+}
+
+.menu {
+  @apply py-2;
+}
+.page-header {
+  @apply px-$site-padding-x;
+  @screen lg {
+    @apply border-b border-light-500;
+  }
+}
+
+.social-media a {
+  @apply text-theme-primary;
+}
+
+.services-table .included {
+  @apply bg-theme-accent text-theme-accent;
+  clip-path: circle(14% at 49% 51%);
+}
+
+.services-table tbody tr {
+  @apply border-b-2 border-theme-neutral;
+}

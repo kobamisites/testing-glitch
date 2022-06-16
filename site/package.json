@@ -1,0 +1,80 @@
+{
+  "scripts": {
+    "dev": "run-p dev:*",
+    "dev:routify": "routify",
+    "dev:vite": "vite -c config/vite.config.ts --host",
+    "build": "cross-env NODE_ENV=production run-s build:*",
+    "build:routify": "routify -b",
+    "build:vite": "vite -c config/vite.config.ts build",
+    "build:static": "spank",
+    "build:fallback-page": "mv dist/404/index.html dist/404.html && rmdir dist/404",
+    "postbuild": "svelte-sitemap --trailing-slashes --domain https://domain --out-dir dist --ignore '404.html'",
+    "deploy": "echo 'Replace with Cloudflare Deploy Hook https://dash.cloudflare.com'",
+    "serve": "run-p serve:*",
+    "serve:vite": "vite preview",
+    "serve:spa": "spassr",
+    "serve:ssr": "spassr --ssr --port 5005",
+    "buildimage:docker": "run-s build:* && docker build -t frontier-app:latest .",
+    "run:docker": "docker run --name frontier-app -d -p 8080:80 frontier-app:latest",
+    "test": "jest --passWithNoTests"
+  },
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^1.0.0-next.34",
+    "eslint": "^7.32.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.1",
+    "eslint-plugin-svelte3": "^3.2.1",
+    "front-matter": "^4.0.2",
+    "html-minifier": "^4.0.0",
+    "lodash.merge": "^4.6.2",
+    "mdsvex": "^0.9.8",
+    "prettier-eslint": "^13.0.0",
+    "spank": "^1.5.0",
+    "svelte-hmr": "^0.14.4",
+    "vite": "^2.7.11",
+    "vite-main-js": "^0.0.1"
+  },
+  "dependencies": {
+    "@feathersjs/authentication-client": "^4.5.11",
+    "@feathersjs/client": "^4.5.11",
+    "@feathersjs/feathers": "^4.5.11",
+    "@feathersjs/rest-client": "^4.5.11",
+    "@feathersjs/socketio-client": "^4.5.11",
+    "@frontierjs/vite-plugin-frontier": "^0.0.3",
+    "@roxi/routify": "^2.14.0",
+    "cross-env": "^7.0.3",
+    "esm": "^3.2.25",
+    "fkill": "^7.1.0",
+    "npm-run-all": "^4.1.5",
+    "patch-package": "^6.4.7",
+    "routify-plugin-frontmatter": "^1.0.1",
+    "sass": "^1.49.9",
+    "socket.io": "2.4.1",
+    "spassr": "^2.4.1-0",
+    "svelte": "^3.46.0",
+    "svelte-sitemap": "^2.3.0",
+    "svelte-windicss-preprocess": "^4.2.5",
+    "unist-util-visit": "^4.1.0",
+    "vite-plugin-windicss": "^1.6.2",
+    "yootils": "^0.3.1"
+  },
+  "appConfig": {
+    "assetsDir": "public",
+    "template": "dist/index.html",
+    "distDir": "dist",
+    "buildDir": "dist/assets",
+    "host": "https://ksite.pages.dev/",
+    "script": "dist/main.js"
+  },
+  "routify": {
+    "pages": "./content/pages",
+    "plugins": {
+      "routify-plugin-frontmatter": {}
+    }
+  },
+  "name": "frontier-app",
+  "type": "module",
+  "version": "0.0.1"
+}
